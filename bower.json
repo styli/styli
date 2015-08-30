@@ -1,0 +1,27 @@
+{
+  "name": "styli",
+  "version": "0.1.0",
+  "homepage": "https://github.com/styli/styli",
+  "authors": [
+    "Ravindra Marella <mv.ravindra@yahoo.com>"
+  ],
+  "description": "Styles for most commonly used web components.",
+  "main": "src/styli.styl",
+  "keywords": [
+    "css",
+    "stylus",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

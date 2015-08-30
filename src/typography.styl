@@ -1,0 +1,88 @@
+html {
+  font-size: fontSize;
+}
+
+body {
+  font-family: fontFamily;
+  line-height: lineHeight;
+  color: #333;
+}
+
+a {
+  color: colors.primary;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+code, kbd, pre, samp {
+  font-family: fontFamilyMonospace;
+}
+
+code {
+  padding: .2rem .3rem;
+  font-size: 90%;
+  white-space: nowrap;
+  background-color: colorFaded;
+}
+
+pre code {
+  display: block;
+  padding: 1rem 1.5rem;
+  white-space: pre;
+  overflow: auto;
+}
+
+blockquote {
+  padding: 1rem;
+  color: gray;
+  border-left: 0.25rem solid gainsboro;
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  &.unstyled, &.horizontal {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &.horizontal {
+    > li {
+      display: inline-block;
+    }
+  }
+
+  &.justified {
+    > li {
+      display: table-cell;
+      width: 1%;
+      vertical-align: middle;
+      text-align: center;
+    }
+  }
+}

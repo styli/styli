@@ -1,0 +1,83 @@
+print-columns(prefix, num, gutter) {
+  for i in (1..num) {
+    percent = (i*100/num)%
+    .{prefix}-{i} {
+      width: percent;
+    }
+    .offset-{prefix}-{i} {
+      margin-left: percent;
+    }
+    .push-{prefix}-{i} {
+      left: (i*100/num)%;
+    }
+    .pull-{prefix}-{i} {
+      right: (i*100/num)%;
+    }
+  }
+}
+
+print-hidden(type, device, size) {
+  .hidden-{type}-{device} {
+    display: none !important;
+  }
+}
+
+print-container(maxWidth) {
+  .container {
+    max-width: maxWidth;
+  }
+}
+
+print-grid() {
+  lastDevice = '';
+  for device, minSize in devices {
+    if (minSize == 0) {
+      print-columns(device, grid.columns, grid.gutter);
+      print-hidden('above', device, minSize);
+    } else {
+      @media (min-width: minSize) {
+        print-columns(device, grid.columns, grid.gutter);
+        print-hidden('above', device, minSize);
+        print-container(containerMaxWidths[device]);
+      }
+    }
+    if (lastDevice != '') {
+      @media (max-width: (minSize - 0.1)) {
+        print-hidden('below', lastDevice, minSize);
+      }
+    }
+    lastDevice = device;
+  }
+  // for last device no media query
+  print-hidden('below', lastDevice, minSize);
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: (grid.gutter/2);
+  padding-right: (grid.gutter/2);
+  @extend $clearfix;
+}
+
+.container {
+  @extend .container-fluid;
+}
+
+.row {
+  @extend $clearfix;
+  margin-left: -(grid.gutter/2);
+  margin-right: -(grid.gutter/2);
+}
+
+.column,
+.columns {
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left: (grid.gutter/2);
+  padding-right: (grid.gutter/2);
+  width: 100%;
+}
+
+print-grid();

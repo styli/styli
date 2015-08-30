@@ -1,0 +1,6 @@
+- Inspired by [Skeleton](https://github.com/dhg/Skeleton) | [MIT](https://github.com/dhg/Skeleton/blob/master/LICENSE.md) and [Pure](https://github.com/yahoo/pure) | [BSD](https://github.com/yahoo/pure/blob/master/LICENSE.md)
+- Most of the code is copied from [Bootstrap](https://github.com/twbs/bootstrap) | [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+- Base styles from [Normalize.css](https://github.com/necolas/normalize.css) | [MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)
+- Navs from [Pure](https://github.com/yahoo/pure) | [BSD](https://github.com/yahoo/pure/blob/master/LICENSE.md)
+- `<select>` styling and icon from [Foundation](https://github.com/zurb/foundation) | [MIT](https://github.com/zurb/foundation/blob/master/LICENSE)
+- Colors from [Flat UI Colors](http://flatuicolors.com/)

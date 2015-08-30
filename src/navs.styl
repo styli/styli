@@ -1,0 +1,40 @@
+.nav {
+  @extend ul.unstyled;
+  margin-left: 0;
+  .nav {
+    padding-left: 1rem;
+    font-size: 90%;
+  }
+  .heading {
+    padding: paddingMedium
+    color: darkgray;
+    text-transform: uppercase;
+    font-size: 90%;
+  }
+  .divider {
+    height: 1px;
+    margin: 0.5rem 0;
+    background-color: #e5e5e5;
+  }
+  > li {
+    // position: relative; // may be useful for dropdowns
+    > a {
+      // position: relative; // may be useful for dropdowns
+    }
+  }
+  a {
+    display: block;
+    padding: paddingMedium;
+    text-decoration: none;
+    white-space: nowrap;
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  .active > a {
+    color: #333;
+  }
+  &.horizontal {
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,97 @@
+button-solid(background) {
+  background-color: background;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: darken(background, 20%);
+  }
+  &[disabled] {
+    background-color: background;
+  }
+}
+
+button-outline(color) {
+  color: color;
+  border-color: color;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: color;
+  }
+  &[disabled] {
+    color: color;
+    background-color: transparent;
+  }
+}
+
+print-buttons() {
+  for name, color in colors {
+    if (name == 'primary') {
+      // make button primary by default
+      .button {
+        button-solid(color);
+      }
+    } else {
+      .{name}.button {
+        button-solid(color);
+      }
+    }
+  }
+}
+
+print-outline-buttons() {
+  for name, color in colors {
+    if (name == 'primary') {
+      // make button primary by default
+      .outline.button {
+        button-outline(color);
+      }
+    } else {
+      .{name}.outline.button {
+        button-outline(color);
+      }
+    }
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: paddingMedium;
+  margin-bottom: 0.625rem;
+  // text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  background-color: colors.primary;
+  color: #fff;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  &.block {
+    width: 100%;
+  }
+}
+
+print-buttons();
+
+.outline.button {
+  background-color: transparent;
+}
+
+print-outline-buttons();
+
+.outline.button:hover,
+.outline.button:focus,
+.outline.button:active,
+.outline.button.active {
+  color: #fff;
+}
